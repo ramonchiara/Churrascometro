@@ -23,7 +23,7 @@
                                 <label class="input-group-text" for="carnes">Carnes</label>
                             </div>
                             <select class="custom-select" id="carnes">
-                                <option ng-repeat="p in carnes| orderBy: 'nome'">{{p.nome}}</option>
+                                <option ng-repeat="p in carnes| orderBy: 'nome'" value="{{p}}">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
@@ -32,7 +32,7 @@
                             </div>
                             <input type="number" min="0" class="form-control" id="carnes-qtd">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>
+                                <button class="btn btn-outline-secondary" type="button" ng-click="comprarCarne()"><span class="oi oi-plus"></span></button>
                             </div>
                         </div>
                         <div class="input-group mb-2">
@@ -40,7 +40,7 @@
                                 <label class="input-group-text" for="bebidas">Bebidas</label>
                             </div>
                             <select class="custom-select" id="bebidas">
-                                <option ng-repeat="p in bebidas| orderBy: 'nome'">{{p.nome}}</option>
+                                <option ng-repeat="p in bebidas| orderBy: 'nome'" value="{{p}}">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
@@ -49,7 +49,7 @@
                             </div>
                             <input type="number" min="0" class="form-control" id="bebidas-qtd">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>
+                                <button class="btn btn-outline-secondary" type="button" ng-click="comprarBebida()"><span class="oi oi-plus"></span></button>
                             </div>
                         </div>
                         <div class="input-group mb-2">
@@ -57,7 +57,7 @@
                                 <label class="input-group-text" for="outros">Outros</label>
                             </div>
                             <select class="custom-select" id="outros">
-                                <option ng-repeat="p in outros| orderBy: 'nome'">{{p.nome}}</option>
+                                <option ng-repeat="p in outros| orderBy: 'nome'" value="{{p}}">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
@@ -66,7 +66,7 @@
                             </div>
                             <input type="number" min="0" class="form-control" id="outros-qtd">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>
+                                <button class="btn btn-outline-secondary" type="button" ng-click="comprarOutro()"><span class="oi oi-plus"></span></button>
                             </div>
                         </div>
                     </form>
@@ -74,25 +74,12 @@
                 <div class="col-12 col-sm-6 col-md-8 col-lg-4">
                     <h2>Lista de Compras</h2>
                     <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>Maminha <span class="badge badge-primary badge-pill">3</span></span>
+                        <li ng-repeat="c in compras| orderBy:'tipo' as lista" class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>{{c.produto.nome}} <span class="badge badge-primary badge-pill">{{c.quantidade}}</span></span>
                             <a href="#" class="text-danger"><span class="oi oi-x"></span></a>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>Picanha <span class="badge badge-primary badge-pill">2</span></span>
-                            <a href="#" class="text-danger"><span class="oi oi-x"></span></a>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>Cerveja <span class="badge badge-primary badge-pill">12</span></span>
-                            <a href="#" class="text-danger"><span class="oi oi-x"></span></a>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>Coca-Cola <span class="badge badge-primary badge-pill">4</span></span>
-                            <a href="#" class="text-danger"><span class="oi oi-x"></span></a>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>Carvão <span class="badge badge-primary badge-pill">1</span></span>
-                            <a href="#" class="text-danger"><span class="oi oi-x"></span></a>
+                        <li ng-if="lista.length === 0" class="list-group-item d-flex justify-content-between align-items-center align-items-center list-group-item-warning">
+                            Selecione um item para comprar e adicione na lista.
                         </li>
                     </ul>
                 </div>
