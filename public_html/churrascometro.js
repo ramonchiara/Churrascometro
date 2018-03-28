@@ -72,9 +72,7 @@ churras.controller('principal', function ($scope, $http) {
     };
 
     $scope.getTotal = function () {
-        var total = $scope.carnesCompradas.total + $scope.bebidasCompradas.total + $scope.outrosComprados.total;
-
-        return total.toFixed(2);
+        return $scope.carnesCompradas.total + $scope.bebidasCompradas.total + $scope.outrosComprados.total;
     };
 
 });

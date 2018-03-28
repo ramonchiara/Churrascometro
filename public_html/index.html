@@ -97,22 +97,22 @@
                             <tr>
                                 <th scope="row">Carnes</th>
                                 <td>{{carnesCompradas.quantidade}}</td>
-                                <td>{{carnesCompradas.total}}</td>
+                                <td>{{carnesCompradas.total.toFixed(2)}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Bebidas</th>
                                 <td>{{bebidasCompradas.quantidade}}</td>
-                                <td>{{bebidasCompradas.total}}</td>
+                                <td>{{bebidasCompradas.total.toFixed(2)}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Outros</th>
                                 <td>{{outrosComprados.quantidade}}</td>
-                                <td>{{outrosComprados.total}}</td>
+                                <td>{{outrosComprados.total.toFixed(2)}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Total</th>
                                 <td>-</td>
-                                <td>{{getTotal()}}</td>
+                                <td>{{getTotal().toFixed(2)}}</td>
                             </tr>
                         </tbody>
                     </table>
