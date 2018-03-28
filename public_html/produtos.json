@@ -1,0 +1,141 @@
+{
+    "carnes": [
+        {
+            "nome": "Picanha",
+            "valor": 61.99
+        },
+        {
+            "nome": "Coxinha da Asa de Frango Temperada",
+            "valor": 13.99
+        },
+        {
+            "nome": "Fraldinha Bovina",
+            "valor": 36.21
+        },
+        {
+            "nome": "Espetinho Coração de Frango",
+            "valor": 15.99
+        },
+        {
+            "nome": "Contra Filé",
+            "valor": 57.74
+        },
+        {
+            "nome": "Espetinho Peito de Frango",
+            "valor": 12.99
+        },
+        {
+            "nome": "Fraldinha Suína",
+            "valor": 10.81
+        },
+        {
+            "nome": "Entrecote Contra Filé Bovino",
+            "valor": 35.19
+        },
+        {
+            "nome": "Maminha",
+            "valor": 51.40
+        },
+        {
+            "nome": "Miolo Alcatra",
+            "valor": 62.29
+        },
+        {
+            "nome": "Fraldinha Bovina",
+            "valor": 31.99
+        },
+        {
+            "nome": "Cupim Bovino",
+            "valor": 12.99
+        },
+        {
+            "nome": "Costela Suína",
+            "valor": 14.20
+        }
+
+    ],
+    "bebidas": [
+        {
+            "nome": "Cerveja",
+            "valor": 5.99
+        },
+        {
+            "nome": "Ypioca",
+            "valor": 15.75
+        },
+        {
+            "nome": "Vodka",
+            "valor": 39.90
+        },
+        {
+            "nome": "Tequila",
+            "valor": 125.90
+        },
+        {
+            "nome": "Smirnoff",
+            "valor": 20.25
+        },
+        {
+            "nome": "Cachaça",
+            "valor": 48.50
+        },
+        {
+            "nome": "Coca-Cola",
+            "valor": 5.75
+        },
+        {
+            "nome": "Sprite",
+            "valor": 5.99
+        },
+        {
+            "nome": "Guaraná",
+            "valor": 7.49
+        },
+        {
+            "nome": "Fanta",
+            "valor": 5.99
+        },
+        {
+            "nome": "Água",
+            "valor": 2.99
+        }
+    ],
+    "outros": [
+        {
+            "nome": "Sal Grosso",
+            "valor": 1.99
+        },
+        {
+            "nome": "Carvão",
+            "valor": 29.90
+        },
+        {
+            "nome": "Guardanapo",
+            "valor": 1.88
+        },
+        {
+            "nome": "Pratos Descartáveis",
+            "valor": 2.55
+        },
+        {
+            "nome": "Copos Descartáveis",
+            "valor": 9.35
+        },
+        {
+            "nome": "Garfos Descartáveis",
+            "valor": 4.29
+        },
+        {
+            "nome": "Facas Descartáveis",
+            "valor": 5.69
+        },
+        {
+            "nome": "Álcool",
+            "valor": 5.58
+        },
+        {
+            "nome": "Fósforos",
+            "valor": 5.69
+        }
+    ]    
+}
