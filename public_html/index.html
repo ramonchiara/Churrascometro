@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" ng-app="churras" ng-controller="principal">
     <head>
         <meta charset="UTF-8">
         <title>Churrascômetro</title>
@@ -23,9 +23,7 @@
                                 <label class="input-group-text" for="carnes">Carnes</label>
                             </div>
                             <select class="custom-select" id="carnes">
-                                <option>Contra Filé</option>
-                                <option>Maminha</option>
-                                <option>Picanha</option>
+                                <option ng-repeat="p in carnes| orderBy: 'nome'">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
@@ -42,9 +40,7 @@
                                 <label class="input-group-text" for="bebidas">Bebidas</label>
                             </div>
                             <select class="custom-select" id="bebidas">
-                                <option>Água</option>
-                                <option>Cerveja</option>
-                                <option>Coca-Cola</option>
+                                <option ng-repeat="p in bebidas| orderBy: 'nome'">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
@@ -61,9 +57,7 @@
                                 <label class="input-group-text" for="outros">Outros</label>
                             </div>
                             <select class="custom-select" id="outros">
-                                <option>Álcool</option>
-                                <option>Carvão</option>
-                                <option>Fósforos</option>
+                                <option ng-repeat="p in outros| orderBy: 'nome'">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
