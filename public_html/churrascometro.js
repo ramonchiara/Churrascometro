@@ -13,6 +13,9 @@ churras.controller('principal', function ($scope, $http) {
     });
 
     $scope.compras = [];
+    $scope.carnesCompradas = {quantidade: 0, total: 0};
+    $scope.bebidasCompradas = {quantidade: 0, total: 0};
+    $scope.outrosComprados = {quantidade: 0, total: 0};
 
     $scope.comprarCarne = function () {
         var carnes = $('#carnes').val();
@@ -27,6 +30,8 @@ churras.controller('principal', function ($scope, $http) {
                 produto: p,
                 quantidade: q
             });
+            $scope.carnesCompradas.quantidade += q;
+            $scope.carnesCompradas.total += p.valor;
         }
     };
 
@@ -43,6 +48,8 @@ churras.controller('principal', function ($scope, $http) {
                 quantidade: q,
                 produto: p
             });
+            $scope.bebidasCompradas.quantidade += q;
+            $scope.bebidasCompradas.total += p.valor;
         }
     };
 
@@ -59,7 +66,15 @@ churras.controller('principal', function ($scope, $http) {
                 quantidade: q,
                 produto: p
             });
+            $scope.outrosComprados.quantidade += q;
+            $scope.outrosComprados.total += p.valor;
         }
+    };
+
+    $scope.getTotal = function () {
+        var total = $scope.carnesCompradas.total + $scope.bebidasCompradas.total + $scope.outrosComprados.total;
+
+        return total.toFixed(2);
     };
 
 });

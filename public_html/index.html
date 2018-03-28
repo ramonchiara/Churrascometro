@@ -96,23 +96,23 @@
                         <tbody>
                             <tr>
                                 <th scope="row">Carnes</th>
-                                <td>5</td>
-                                <td>R$ 278,18</td>
+                                <td>{{carnesCompradas.quantidade}}</td>
+                                <td>{{carnesCompradas.total}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Bebidas</th>
-                                <td>16</td>
-                                <td>R$ 94,88</td>
+                                <td>{{bebidasCompradas.quantidade}}</td>
+                                <td>{{bebidasCompradas.total}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Outros</th>
-                                <td>1</td>
-                                <td>R$ 29,90</td>
+                                <td>{{outrosComprados.quantidade}}</td>
+                                <td>{{outrosComprados.total}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Total</th>
                                 <td>-</td>
-                                <td>R$ 402,96</td>
+                                <td>{{getTotal()}}</td>
                             </tr>
                         </tbody>
                     </table>
