@@ -22,15 +22,15 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="carnes">Carnes</label>
                             </div>
-                            <select class="custom-select" id="carnes">
-                                <option ng-repeat="p in carnes| orderBy: 'nome'" value="{{p}}">{{p.nome}}</option>
+                            <select class="custom-select" id="carnes" ng-model="carneSelecionada">
+                                <option ng-repeat="p in carnes| orderBy: 'nome'">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="carnes-qtd">Quantidade</label>
                             </div>
-                            <input type="number" min="0" class="form-control" id="carnes-qtd">
+                            <input type="number" min="0" class="form-control" id="carnes-qtd" ng-model="carneQtd">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button" ng-click="comprarCarne()"><span class="oi oi-plus"></span></button>
                             </div>
@@ -39,15 +39,15 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="bebidas">Bebidas</label>
                             </div>
-                            <select class="custom-select" id="bebidas">
-                                <option ng-repeat="p in bebidas| orderBy: 'nome'" value="{{p}}">{{p.nome}}</option>
+                            <select class="custom-select" id="bebidas" ng-model="bebidaSelecionada">
+                                <option ng-repeat="p in bebidas| orderBy: 'nome'">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="bebidas-qtd">Quantidade</label>
                             </div>
-                            <input type="number" min="0" class="form-control" id="bebidas-qtd">
+                            <input type="number" min="0" class="form-control" id="bebidas-qtd" ng-model="bebidaQtd">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button" ng-click="comprarBebida()"><span class="oi oi-plus"></span></button>
                             </div>
@@ -56,15 +56,15 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="outros">Outros</label>
                             </div>
-                            <select class="custom-select" id="outros">
-                                <option ng-repeat="p in outros| orderBy: 'nome'" value="{{p}}">{{p.nome}}</option>
+                            <select class="custom-select" id="outros" ng-model="outroSelecionado">
+                                <option ng-repeat="p in outros| orderBy: 'nome'">{{p.nome}}</option>
                             </select>
                         </div>
                         <div class="input-group mb-4">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="outros-qtd">Quantidade</label>
                             </div>
-                            <input type="number" min="0" class="form-control" id="outros-qtd">
+                            <input type="number" min="0" class="form-control" id="outros-qtd" ng-model="outroQtd">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button" ng-click="comprarOutro()"><span class="oi oi-plus"></span></button>
                             </div>
@@ -75,7 +75,7 @@
                     <h2>Lista de Compras</h2>
                     <ul class="list-group">
                         <li ng-repeat="c in compras| orderBy:'tipo' as lista" class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>{{c.produto.nome}} <span class="badge badge-primary badge-pill">{{c.quantidade}}</span></span>
+                            <span>{{c.produto}} <span class="badge badge-primary badge-pill">{{c.quantidade}}</span></span>
                             <a href="#" class="text-danger"><span class="oi oi-x"></span></a>
                         </li>
                         <li ng-if="lista.length === 0" class="list-group-item d-flex justify-content-between align-items-center align-items-center list-group-item-warning">
@@ -96,23 +96,23 @@
                         <tbody>
                             <tr>
                                 <th scope="row">Carnes</th>
-                                <td>{{carnesCompradas.quantidade}}</td>
-                                <td>{{carnesCompradas.total.toFixed(2)}}</td>
+				<td>{{'-'}}</td>
+				<td>{{'-'}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Bebidas</th>
-                                <td>{{bebidasCompradas.quantidade}}</td>
-                                <td>{{bebidasCompradas.total.toFixed(2)}}</td>
+				<td>{{'-'}}</td>
+				<td>{{'-'}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Outros</th>
-                                <td>{{outrosComprados.quantidade}}</td>
-                                <td>{{outrosComprados.total.toFixed(2)}}</td>
+				<td>{{'-'}}</td>
+				<td>{{'-'}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Total</th>
                                 <td>-</td>
-                                <td>{{getTotal().toFixed(2)}}</td>
+				<td>{{'-'}}</td>
                             </tr>
                         </tbody>
                     </table>

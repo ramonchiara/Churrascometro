@@ -13,66 +13,44 @@ churras.controller('principal', function ($scope, $http) {
     });
 
     $scope.compras = [];
-    $scope.carnesCompradas = {quantidade: 0, total: 0};
-    $scope.bebidasCompradas = {quantidade: 0, total: 0};
-    $scope.outrosComprados = {quantidade: 0, total: 0};
 
     $scope.comprarCarne = function () {
-        var carnes = $('#carnes').val();
-        var carnesQtd = $('#carnes-qtd').val();
+        var p = $scope.carneSelecionada;
+        var q = $scope.carneQtd;
 
-        var p = JSON.parse(carnes);
-        var q = parseFloat(carnesQtd);
-
-        if (q > 0) {
-            $scope.compras.push({
+	if (p != null && q > 0) {
+	    $scope.compras.push({
                 tipo: 'carnes',
                 produto: p,
                 quantidade: q
             });
-            $scope.carnesCompradas.quantidade += q;
-            $scope.carnesCompradas.total += p.valor;
-        }
+	}
     };
 
     $scope.comprarBebida = function () {
-        var bebidas = $('#bebidas').val();
-        var bebidasQtd = $('#bebidas-qtd').val();
+        var p = $scope.bebidaSelecionada;
+        var q = $scope.bebidaQtd; 
 
-        var p = JSON.parse(bebidas);
-        var q = parseFloat(bebidasQtd);
-
-        if (q > 0) {
+        if (p != null && q > 0) {
             $scope.compras.push({
                 tipo: 'bebidas',
-                quantidade: q,
-                produto: p
+                produto: p,
+                quantidade: q
             });
-            $scope.bebidasCompradas.quantidade += q;
-            $scope.bebidasCompradas.total += p.valor;
         }
     };
 
     $scope.comprarOutro = function () {
-        var outros = $('#outros').val();
-        var outrosQtd = $('#outros-qtd').val();
+        var p = $scope.outroSelecionado;
+        var q = $scope.outroQtd;
 
-        var p = JSON.parse(outros);
-        var q = parseFloat(outrosQtd);
-
-        if (q > 0) {
+        if (p != null && q > 0) {
             $scope.compras.push({
                 tipo: 'outros',
-                quantidade: q,
-                produto: p
+                produto: p,
+                quantidade: q
             });
-            $scope.outrosComprados.quantidade += q;
-            $scope.outrosComprados.total += p.valor;
         }
-    };
-
-    $scope.getTotal = function () {
-        return $scope.carnesCompradas.total + $scope.bebidasCompradas.total + $scope.outrosComprados.total;
     };
 
 });
