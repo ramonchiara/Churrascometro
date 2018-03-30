@@ -18,18 +18,18 @@ churras.controller('principal', function ($scope, $http) {
         var p = $scope.carneSelecionada;
         var q = $scope.carneQtd;
 
-	if (p !== undefined && q > 0) {
-	    $scope.compras.push({
+        if (p !== undefined && q > 0) {
+            $scope.compras.push({
                 tipo: 'carnes',
                 produto: p,
                 quantidade: q
             });
-	}
+        }
     };
 
     $scope.comprarBebida = function () {
         var p = $scope.bebidaSelecionada;
-        var q = $scope.bebidaQtd; 
+        var q = $scope.bebidaQtd;
 
         if (p !== undefined && q > 0) {
             $scope.compras.push({
@@ -51,6 +51,48 @@ churras.controller('principal', function ($scope, $http) {
                 quantidade: q
             });
         }
+    };
+
+    $scope.quantidadeCarnes = function () {
+        var qtd = 0;
+
+        for (var i = 0; i < $scope.compras.length; i++) {
+            var c = $scope.compras[i];
+            
+            if (c.tipo === 'carnes') {
+                qtd += c.quantidade;
+            }
+        }
+
+        return qtd;
+    };
+
+    $scope.quantidadeBebidas = function () {
+        var qtd = 0;
+
+        for (var i = 0; i < $scope.compras.length; i++) {
+            var c = $scope.compras[i];
+            
+            if (c.tipo === 'bebidas') {
+                qtd += c.quantidade;
+            }
+        }
+
+        return qtd;
+    };
+
+    $scope.quantidadeOutros = function () {
+        var qtd = 0;
+
+        for (var i = 0; i < $scope.compras.length; i++) {
+            var c = $scope.compras[i];
+            
+            if (c.tipo === 'outros') {
+                qtd += c.quantidade;
+            }
+        }
+
+        return qtd;
     };
 
 });
