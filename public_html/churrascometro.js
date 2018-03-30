@@ -53,41 +53,13 @@ churras.controller('principal', function ($scope, $http) {
         }
     };
 
-    $scope.quantidadeCarnes = function () {
+    $scope.quantidade = function (tipo) {
         var qtd = 0;
 
         for (var i = 0; i < $scope.compras.length; i++) {
             var c = $scope.compras[i];
-            
-            if (c.tipo === 'carnes') {
-                qtd += c.quantidade;
-            }
-        }
 
-        return qtd;
-    };
-
-    $scope.quantidadeBebidas = function () {
-        var qtd = 0;
-
-        for (var i = 0; i < $scope.compras.length; i++) {
-            var c = $scope.compras[i];
-            
-            if (c.tipo === 'bebidas') {
-                qtd += c.quantidade;
-            }
-        }
-
-        return qtd;
-    };
-
-    $scope.quantidadeOutros = function () {
-        var qtd = 0;
-
-        for (var i = 0; i < $scope.compras.length; i++) {
-            var c = $scope.compras[i];
-            
-            if (c.tipo === 'outros') {
+            if (c.tipo === tipo) {
                 qtd += c.quantidade;
             }
         }
