@@ -18,7 +18,7 @@ churras.controller('principal', function ($scope, $http) {
         var p = $scope.carneSelecionada;
         var q = $scope.carneQtd;
 
-	if (p != null && q > 0) {
+	if (p !== undefined && q > 0) {
 	    $scope.compras.push({
                 tipo: 'carnes',
                 produto: p,
@@ -31,7 +31,7 @@ churras.controller('principal', function ($scope, $http) {
         var p = $scope.bebidaSelecionada;
         var q = $scope.bebidaQtd; 
 
-        if (p != null && q > 0) {
+        if (p !== undefined && q > 0) {
             $scope.compras.push({
                 tipo: 'bebidas',
                 produto: p,
@@ -44,7 +44,7 @@ churras.controller('principal', function ($scope, $http) {
         var p = $scope.outroSelecionado;
         var q = $scope.outroQtd;
 
-        if (p != null && q > 0) {
+        if (p !== undefined && q > 0) {
             $scope.compras.push({
                 tipo: 'outros',
                 produto: p,
@@ -54,4 +54,3 @@ churras.controller('principal', function ($scope, $http) {
     };
 
 });
-
