@@ -20,12 +20,18 @@ churras.controller('principal', function ($scope, $http) {
         var v = valor(p, $scope.carnes);
 
         if (p !== undefined && q > 0) {
-            $scope.compras.push({
-                tipo: 'carnes',
-                produto: p,
-                quantidade: q,
-                valor: v
-            });
+            var i = find(p);
+
+            if (i >= 0) {
+                $scope.compras[i].quantidade += q;
+            } else {
+                $scope.compras.push({
+                    tipo: 'carnes',
+                    produto: p,
+                    quantidade: q,
+                    valor: v
+                });
+            }
         }
     };
 
@@ -35,12 +41,18 @@ churras.controller('principal', function ($scope, $http) {
         var v = valor(p, $scope.bebidas);
 
         if (p !== undefined && q > 0) {
-            $scope.compras.push({
-                tipo: 'bebidas',
-                produto: p,
-                quantidade: q,
-                valor: v
-            });
+            var i = find(p);
+
+            if (i >= 0) {
+                $scope.compras[i].quantidade += q;
+            } else {
+                $scope.compras.push({
+                    tipo: 'bebidas',
+                    produto: p,
+                    quantidade: q,
+                    valor: v
+                });
+            }
         }
     };
 
@@ -50,12 +62,18 @@ churras.controller('principal', function ($scope, $http) {
         var v = valor(p, $scope.outros);
 
         if (p !== undefined && q > 0) {
-            $scope.compras.push({
-                tipo: 'outros',
-                produto: p,
-                quantidade: q,
-                valor: v
-            });
+            var i = find(p);
+
+            if (i >= 0) {
+                $scope.compras[i].quantidade += q;
+            } else {
+                $scope.compras.push({
+                    tipo: 'outros',
+                    produto: p,
+                    quantidade: q,
+                    valor: v
+                });
+            }
         }
     };
 
@@ -73,6 +91,21 @@ churras.controller('principal', function ($scope, $http) {
 
         return valor;
     };
+
+    var find = function (produto) {
+        var indice = -1;
+
+        for (var i = 0; i < $scope.compras.length; i++) {
+            var c = $scope.compras[i];
+
+            if (c.produto === produto) {
+                indice = i;
+                break;
+            }
+        }
+
+        return indice;
+    }
 
     $scope.quantidade = function (tipo) {
         var qtd = 0;
