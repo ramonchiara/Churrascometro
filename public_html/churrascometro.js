@@ -142,4 +142,18 @@ churras.controller('principal', function ($scope, $http) {
         return total.toFixed(2);
     };
 
+    $scope.sortCompras = function (c) {
+        var ordem = ['carnes', 'bebidas', 'outros'];
+
+        var tipo = 0;
+        for (var i = 0; i < ordem.length; i++) {
+            if (c.tipo === ordem[i]) {
+                tipo = i;
+                break;
+            }
+        }
+        
+        return tipo + c.produto;
+    };
+
 });
