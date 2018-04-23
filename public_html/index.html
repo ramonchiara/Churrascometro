@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+        <link rel="stylesheet" href="https://afeld.github.io/emoji-css/emoji.css">
     </head>
     <body>
         <div class="container-fluid">
@@ -75,7 +76,7 @@
                     <h2>Lista de Compras</h2>
                     <ul class="list-group">
                         <li ng-repeat="c in compras| orderBy:sortCompras as lista" class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>{{c.produto}} <span class="badge badge-primary badge-pill">{{c.quantidade}}</span></span>
+                            <span><i class="em ng-class: c.tipo === 'carnes' ? 'em-cut_of_meat' : c.tipo === 'bebidas' ? 'em-beer' : 'em-knife_fork_plate'"></i> {{c.produto}} <span class="badge badge-primary badge-pill">{{c.quantidade}}</span></span>
                             <a href="#" class="text-danger" ng-click="remover(c.produto)"><span class="oi oi-x"></span></a>
                         </li>
                         <li ng-if="lista.length === 0" class="list-group-item d-flex justify-content-between align-items-center align-items-center list-group-item-warning">
