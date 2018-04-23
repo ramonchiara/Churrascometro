@@ -77,6 +77,13 @@ churras.controller('principal', function ($scope, $http) {
         }
     };
 
+    $scope.remover = function (produto) {
+        var i = find(produto);
+        if (i >= 0) {
+            $scope.compras.splice(i, 1);
+        }
+    };
+
     var valor = function (nome, lista) {
         var valor = 0;
 
