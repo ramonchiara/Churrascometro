@@ -32,6 +32,7 @@ churras.controller('principal', function ($scope, $http) {
                     valor: v
                 });
             }
+            $scope.carneQtd = 1;
         }
     };
 
@@ -53,6 +54,7 @@ churras.controller('principal', function ($scope, $http) {
                     valor: v
                 });
             }
+            $scope.bebidaQtd = 1;
         }
     };
 
@@ -74,6 +76,7 @@ churras.controller('principal', function ($scope, $http) {
                     valor: v
                 });
             }
+            $scope.outroQtd = 1;
         }
     };
 
